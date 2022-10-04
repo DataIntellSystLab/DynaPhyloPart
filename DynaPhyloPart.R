@@ -12,12 +12,12 @@ setwd("C:/Users/m.prosperi/Downloads/bibm22-phylopart")
 treefilename="nextstrain_ncov_open_global_all-time_tree.nwk"
 tree=read.tree(treefilename)
 
-#tree=rtree(333)  #RANDOM TREE IF YOU JUST WANNA PLAY
+tree=rtree(333)  #RANDOM TREE IF YOU JUST WANNA PLAY
 
 ################################################################
 ##### SET YOUR PARAMETERS HERE
 
-minpercthresh=0.33  ## PERCENTILE THRESHOLD
+minpercthresh=0.03  ## PERCENTILE THRESHOLD
 minnumclus=3        ## MINIMUM CLUSTER SIZE
 dist_limit=25000    ## LIMIT ON PAIRWISE DISTANCES' CALCULATION
 
@@ -112,7 +112,7 @@ palett=sample(palett)
 edgecols=rep("grey",length(tree$edge[,2]))
 for (i in 1:length(edgecols))
 {
-	for (j in 1:length(clusts)) {if (length(clusts[[j]])>=minnumclus && tree$edge[i,2] %in% clusts[[j]]) {edgecols[i]=palett[j];break;}}
+	for (j in 1:length(clusts)) {if (length(clusts[[j]])>=minnumclus && tree$edge[i,1] %in% clusts[[j]] && tree$edge[i,2] %in% clusts[[j]]) {edgecols[i]=palett[j];break;}}
 }
 nodecols=rep("grey",length(unique(tree$edge[,1])))
 for (i in 1:length(nodecols))
