@@ -1,8 +1,10 @@
 # DynaPhyloPart
 Dynamic partition of phylogenetic trees
 
-# MIT LICENSE
-Copyright (c) <2022> <Mattia Prosperi>
+# License
+MIT
+
+Copyright (c) 2022 Mattia Prosperi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
